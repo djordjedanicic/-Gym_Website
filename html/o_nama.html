@@ -1,0 +1,112 @@
+<html>
+
+<head>
+  <title></title>
+  <link rel="stylesheet" href="../css/bgColorMain.css">
+  <link rel="stylesheet" href="../css/o_nama.css">
+  <script src="../js/zak_treninga.js"></script>
+
+  <!-- Bootstrap css -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <!-- Bootstraj js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+
+  <!-- jQuery link -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/header.css">
+
+  
+  <script src="../js/language.js"></script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header></header>
+    <main>
+      <div class="about-section">
+        <h1></h1>
+        <p id="txt2"></p>
+        <p id="txt1"></p>
+        <h2></h2>
+        <p><a href="tel:+38162570434">+38162570434</a></p>
+      </div>
+
+      <div class="row">
+        <h2 class="col-sm-2 offset-sm-5" style="text-align: center" id="naslov_nas_tim">Naš tim</h2>
+        <div class="row" style="text-align:center">
+          <div class="col-sm-6">
+            <div class="card">
+              <img src="../images/dynamic_floor4.jpg" alt="Đorđe" style="width:100%">
+              <div class="container">
+                <h2>Đorđe Daničić</h2>
+                <p class="title"></p>
+                <p></p>
+                <p> <a href="mailto:dd170692d@student.etf.bg.ac.rs">dd170692d@student.etf.bg.ac.rs</a></p>
+                <p><button class="button" href="tel:+381605161414">Contact</button></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6" style="float: right;">
+            <div class="card">
+              <img src="../images/cardio3.jpg" alt="Luka" style="width:100%">
+              <div class="container">
+                <h2>Luka Matović</h2>
+                <p class="title"></p>
+                <p></p>
+                <p> <a href="mailto:ml170722d@student.etf.bg.ac.rs">ml170722d@student.etf.bg.ac.rs</a></p>
+                <p><button class="button" href="tel:+381628379996">Contact</button></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d45298.1615322316!2d20.4496662222911!3d44.79843536846956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1snon%20stop%20fitness!5e0!3m2!1ssr!2srs!4v1593814593132!5m2!1ssr!2srs"
+          width="100%" style="padding: 20px;" height="450" frameborder="0" style="border:0;" allowfullscreen=""
+          aria-hidden="false" tabindex="0"></iframe>
+      </div>
+    </main>
+    <footer> </footer>
+  </div>
+
+  <script>
+    $().ready(function () {
+      getHeaderAndFooter();
+    });
+    function translatePage(language) {
+      $('head title').text(language.head_aboutUs);
+      $('main .about-section').each(function () {
+        $(this).find('h1').text(language.aboutUs_tite);
+        $(this).find('#txt1').text(language.aboutUs_text);
+        $(this).find('#txt2').text(language.aboutUs_text2);
+        $(this).find('h2').text(language.aboutUs_contact_title);
+      });
+      $('#naslov_nas_tim').text(language.about_our_team);
+      let i = 1;
+      $('.card').each(function () {
+        $(this).find('.title').text(language['about_dev_' + i + '_p_1']);
+        $(this).find('.title').next().text(language['about_dev_' + i + '_p_2']);
+        $(this).find("button").text(language.about_btn_contact);
+        i++;
+      });
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Bootstraj js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../css/zak_tereninga.css">
+
+    <!-- jQuery link -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        if (sessionStorage.getItem("Prisustvo") == null) {
+            var prisustvo = [
+                { tip: "Raja Yoga", status: 1, sum_ocena: 10, br_ocena: 3, pros_ocena: 3.33, ocena: 0 },
+                { tip: "Hatha Yoga", status: 0, sum_ocena: 17, br_ocena: 4, pros_ocena: 4.25, ocena: 0 },
+                { tip: "Jnana Yoga", status: 1, sum_ocena: 9, br_ocena: 3, pros_ocena: 3, ocena: 0 },
+                { tip: "Classic Pilates", status: 0, sum_ocena: 15, br_ocena: 4, pros_ocena: 3.75, ocena: 0 },
+                { tip: "Stott Pilates", status: 1, sum_ocena: 13, br_ocena: 3, pros_ocena: 4.33, ocena: 0 },
+                { tip: "Reformer Pilates", status: 0, sum_ocena: 7, br_ocena: 2, pros_ocena: 3.5, ocena: 0 },
+                { tip: "Isometric Core", status: 1, sum_ocena: 21, br_ocena: 5, pros_ocena: 4.2, ocena: 0 },
+                { tip: "Standing Core", status: 1, sum_ocena: 20, br_ocena: 5, pros_ocena: 4, ocena: 0 },
+                { tip: "Dynamic Floor", status: 0, sum_ocena: 11, br_ocena: 3, pros_ocena: 3.66, ocena: 0 },
+                { tip: "Circuit Cardio", status: 1, sum_ocena: 23, br_ocena: 5, pros_ocena: 4.6, ocena: 0 },
+                { tip: "HIIT Cardio", status: 1, sum_ocena: 16, br_ocena: 4, pros_ocena: 4, ocena: 0 },
+                { tip: "Fartlek", status: 1, sum_ocena: 18, br_ocena: 4, pros_ocena: 4.5, ocena: 0 },
+            ];
+            sessionStorage.setItem("Prisustvo", JSON.stringify(prisustvo));
+        }
+    </script>
+
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/header.css">
+
+    
+    <script src="../js/language.js"></script>
+
+    <title></title>
+</head>
+
+<body>
+    <header></header>
+
+    <main>
+        <div class="text row">
+            <h1 class="col-sm-12">
+                <b></b>
+            </h1>
+            <p class="row">
+                <span class="col-sm-12"></span>
+                <span class="col-sm-12"></span>
+            </p>
+        </div>
+
+        <!-- needs to be added later -->
+        <div>
+            <div class="row top-vote-container">
+                <div class="col-sm-4">
+                    <div class="row">
+                        <img src="" alt="" id="top-vote-1" class="col-sm-12">
+                        <h3 class="offset-sm-3 col-sm-6" id="top-vote-1-title"></h3>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="row">
+                        <img src="" alt="" id="top-vote-2" class="col-sm-12">
+                        <h3 class="offset-sm-3 col-sm-6" id="top-vote-2-title"></h3>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="row">
+                        <img src="" alt="" id="top-vote-3" class="col-sm-12">
+                        <h3 class="offset-sm-3 col-sm-6" id="top-vote-3-title"></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="media-icon">
+            <a href="https://www.facebook.com/nsfserbia"><img src="../svg/fb-svg.svg" alt=""></a>
+            <a href="https://www.instagram.com/nonstopfitness_serbia/"><img src="../svg/insta-svg.svg" alt=""></a>
+            <a href="https://twitter.com/NonstopFitSav"><img src="../svg/twitter-svg.svg" alt=""></a>
+            <a href="https://www.youtube.com/channel/UCNsw0yEc3zWIheTB0HcpW5A"><img src="../svg/youtube-svg.svg"
+                    alt=""></a>
+        </div>
+
+    </main>
+
+    <footer></footer>
+
+    <script>
+        function translatePage(language) {
+            $('head title').text(language.head_home);
+            $('.text b').text(language.home_page_title_header);
+            let i = 1;
+            $('main span').each(function () {
+                $(this).text(language["home_page_title_paragraph_line_" + i++]);
+            });
+        }
+
+        $().ready(function () {
+            getHeaderAndFooter();
+        });
+
+        $().ready(function () {
+            let pris = sessionStorage.getItem("Prisustvo");
+            let db = JSON.parse(pris);
+            let top = [0, 0, 0];
+
+            for (let i = 0; i < db.length; i++) {
+                if (db[top[0]].pros_ocena <= db[i].pros_ocena) {
+                    top[2] = top[1];
+                    top[1] = top[0];
+                    top[0] = i;
+                } else {
+                    if (db[top[1]].pros_ocena <= db[i].pros_ocena) {
+                        top[2] = top[1];
+                        top[1] = i;
+                    } else {
+                        if (db[top[2]].pros_ocena < db[i].pros_ocena) {
+                            top[2] = i;
+                        }
+                    }
+                }
+            }
+            console.log(top);
+
+            let i = 0;
+            $('.top-vote-container img').each(function () {
+                $(this).attr('src', "../images/" + db[top[i++]].tip + "-home.jpg");
+            });
+
+            i = 0;
+            $('.top-vote-container h3').each(function () {
+                $(this).text(db[top[i++]].tip);
+            });
+
+        });
+
+
+    </script>
+</body>
+
+</html>
